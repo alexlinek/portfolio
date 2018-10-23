@@ -1,0 +1,176 @@
+// Home
+
+// Background --------------------------------
+body {
+  background-color: #eee;
+  background-image: url(/assets/images/tri-pat.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 750px;
+  position: relative;
+}
+
+// Positioning -------------------------------
+header {
+  position: absolute;
+  top: 2em;
+  left: 0;
+  right: 0;
+  @include media-query($bp-mobile) {
+    position: relative;
+    left: 2.5%;
+  }
+}
+
+#home-body {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  @include transform(translateY(-50%));
+  @include media-query($bp-mobile) {
+    position: relative;
+    @include transform(translateY(0));
+    margin: 6em 2.5% 2em;
+    top: auto;
+    bottom: 2em;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  @include media-query($bp-mobile) {
+    left: 2.5%;
+  }
+}
+
+// Text -------------------------------------
+h1 {
+  color: $grey;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: .05em;
+}
+
+p {
+  font-weight: 100;
+  letter-spacing: .03em;
+  margin-bottom: 0;
+  @include media-query($bp-tablet) {
+    max-width: 50ch;
+    margin-bottom: 1em;
+  }
+}
+
+#intro-text {
+  margin-bottom: 2em;
+}
+
+.copyright {
+  color: $grey;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin-bottom: 2em;
+  @include media-query($bp-mobile) {
+    margin-left: 5%;
+  }
+}
+
+// Icons -------------------------------------
+.si-link {
+  display: inline-block;
+  margin: 0 10px 10px 0;
+  svg {
+    width: 75px;
+    height: 75px;
+  }
+  .si-title {
+    display: none;
+  }
+}
+
+$social:  (email, $melon),
+          (linkedin, $linkedin),
+          (github, $github),
+          (dribbble, $dribbble),
+          (codepen, $codepen);
+
+@each $social, $color in $social {
+  .si-link.#{$social} svg {
+    fill: $black;
+    @include transition(all);
+    &:focus,
+    &:hover {
+      fill: $color;
+      // -webkit-filter: drop-shadow( 0 0 15px rgba(0,0,0,.15) );
+      // filter: drop-shadow( 0 0 15px rgba(0,0,0,.15) );
+    }
+  }
+}
+
+// Pup --------------------------------------
+footer .group {
+  position: relative;
+}
+
+.husky {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+}
+
+@keyframes slide-in {
+  from { bottom: -200px; }
+  to { bottom: 0; }
+}
+.husky img {
+  animation: slide-in 2.5s ease;
+}
+
+//for future fun stuff, this looks like reading right to left
+// @keyframes reading-wrong {
+//   0%, 100% { left: 15px; }
+//   10% { left: 0; }
+//   80% { left: 15px; }
+// }
+
+@keyframes shifty {
+  0%, 100% { left: 15px; }
+  10% { left: 0; }
+  90% { left: 0; }
+}
+@keyframes blink {
+  0%, 100% { height: auto; }
+  1% { height: 0; }
+  2% { height: auto; }
+}
+
+.husky .eyes,
+.husky .eyes {
+  animation:
+    shifty 6s ease infinite,
+    blink 8s linear 2s infinite,
+    slide-in 2.5s ease;
+}

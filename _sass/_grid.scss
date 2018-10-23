@@ -1,0 +1,49 @@
+
+/* Grid ------------------------------------ */
+
+.section {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+.group {
+	margin: 0 auto;
+	max-width: $max-width;
+	width: 90%;
+	@extend %clearfix;
+}
+
+[class^="span"],
+[class*="span"] {
+	float: left;
+	margin: 0 2%;
+	@include media-query($bp-mobile) {
+		margin: 0;
+	}
+}
+
+/* margin - align */
+.span1-1 { width: 96%; }
+
+/* halves */
+.span1-2 { width: 46%; }
+
+/* thirds */
+.span1-3 { width: 28.66%; }
+.span2-3 { width: 62.33%; }
+
+
+/*  quarters  */
+.span1-4 { width: 21%; }
+.span3-4 { width: 71%; }
+
+@include media-query($bp-mobile) {
+	.span1-2,
+	.span1-3,
+	.span2-3,
+	.span1-4,
+	.span3-4 {
+    width: 100%;
+  }
+}

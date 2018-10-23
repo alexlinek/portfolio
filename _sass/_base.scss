@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+// Basic resets
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  // background: $lt-grey;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+// Basic body styles
+body {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $black;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+  -moz-font-feature-settings: "kern" 1;
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
+// Set `margin-bottom` (to maintain vertical rhythm)
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: $spacing-unit / 2;
+}
+
+// Images
+img {
+  box-sizing: border-box;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+// Figures
+figure > img {
+  display: block;
+}
+
+figcaption {
+  font-size: $small-font-size;
+}
+
+// Lists
+ul,
+ol {
+  margin-left: $spacing-unit;
+}
+
+li {
+  > ul,
+  > ol {
+     margin-bottom: 0;
+  }
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: $headline-font-family;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.25em;
+}
+
+h3 {
+  font-family: $base-font-family;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1em;
+  margin-bottom: 1em;
+}
+
+.small {
+  font-size: $small-font-size;
+}
+
+// Links
+a {
+  color: $melon;
+  text-decoration: none;
+  outline: none!important;
+
+  &:visited {
+    color: darken($melon, 5%);
+  }
+
+  &:hover {
+    color: darken($melon, 5%);
+    text-decoration: underline;
+  }
+}
+
+// Clearfix
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Wrapper
+.wrapper {
+  width: 100%;
+  @extend %clearfix;
+}
+
+.text-center { text-align: center; }

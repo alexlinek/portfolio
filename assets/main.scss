@@ -1,0 +1,127 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// @font-face
+@font-face{
+    font-family: 'geomanist';
+    src: url('fonts/geomanist/light/geomanist-light-webfont.eot');
+    src: url('fonts/geomanist/light/geomanist-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/geomanist/light/geomanist-light-webfont.woff') format('woff'),
+         url('fonts/geomanist/light/geomanist-light-webfont.ttf') format('truetype'),
+         url('fonts/geomanist/light/geomanist-light-webfont.svg#webfont') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'geomanist';
+    src: url('fonts/geomanist/regular/geomanist-regular-webfont.eot');
+    src: url('fonts/geomanist/regular/geomanist-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/geomanist/regular/geomanist-regular-webfont.woff') format('woff'),
+         url('fonts/geomanist/regular/geomanist-regular-webfont.ttf') format('truetype'),
+         url('fonts/geomanist/regular/geomanist-regular-webfont.svg#webfont') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'geomanist';
+    src: url('fonts/geomanist/bold/geomanist-bold-webfont.eot');
+    src: url('fonts/geomanist/bold/geomanist-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/geomanist/bold/geomanist-bold-webfont.woff') format('woff'),
+         url('fonts/geomanist/bold/geomanist-bold-webfont.ttf') format('truetype'),
+         url('fonts/geomanist/bold/geomanist-bold-webfont.svg#webfont') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+
+// Colors
+$white:       #ffffff;
+$lt-grey:     #E3E3E3;
+$grey:        #6D6D6D;
+$black:       #3E3E3F;
+
+$melon:       #FF6861;
+
+$linkedin:    #0077b5;
+$dribbble:    #ea4c89;
+$github:      #6cc644;
+$codepen:     #fcd000;
+
+
+// Fonts
+$base-font-family: 'geomanist', sans-serif; // Google
+$base-font-size:   18px;
+$base-font-weight: 400;
+$base-line-height: 1.5;
+
+$headline-font-family: "geomanist",sans-serif;
+
+$small-font-size:  $base-font-size * 0.875;
+
+$regular:          400;
+$bold:             700;
+
+$spacing-unit:     30px;
+$max-width:        1440px;
+
+// Breakpoints
+$bp-mobile:        600px;
+$bp-tablet:        900px;
+$bp-desktop:       1040px;
+
+// Mixins
+// Use media queries like this:
+// @include media-query($bp-tablet) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin border-radius($radius: 3px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($property:all,$duration:.2s,$timing:linear,$delay:0s) {
+	-webkit-transition: $property $duration $timing $delay;
+	-moz-transition: $property $duration $timing $delay;
+	-ms-transition: $property $duration $timing $delay;
+  -o-transition: $property $duration $timing $delay;
+	transition: $property $duration $timing $delay;
+}
+
+// Browser Prefixes
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+  -o-transform: $transforms;
+	transform: $transforms;
+}
+
+// Import partials
+@import "base";
+@import "grid";
+@import "home";
