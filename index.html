@@ -22,16 +22,27 @@ social-icons:
 <div id="home-body">
   <div class="section">
     <div id="intro-text" class="group">
-      <h2>Hello there!</h2>
-      <p>Sorry, I haven’t gotten around to updating things here yet.</p> <p>For now, please feel free to shoot me an email or connect with me around the web.</p>
-    </div>
-    <div id="social-icons" class="group">
-      {% for icon in page.social-icons %}
-        <a class="si-link {{ icon.class }}" href="{{ icon.url }}" target="_blank">
-          {% include {{ icon.class | prepend: 'icons/' | append: '.svg' }} %}
-          <span class="si-title">{{ icon.title }}</span>
+      <div class="span1-1">
+        <h2>Hey there!</h2>
+        <p class="intro-p">I’m a web designer & developer with 5+ years of experience conceptualizing and delivering effective, user-friendly solutions.</p>
+        <a href="assets/pdfs/resume_linek.pdf" class="btn-primary" target="_blank">
+          Check Out My Résumé
         </a>
-      {% endfor %}
+      </div>
     </div>
   </div>
+
+  <div class="section">
+    {% include feat-work.html %}
+    {% include feat-cont.html %}
+  </div>
+
+  <!-- <div class="section">
+    {% include what-else.html %}
+  </div> -->
+
+  <div class="section">
+    {% include connect.html %}
+  </div>
+
 </div>

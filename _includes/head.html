@@ -4,7 +4,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  {%- include favicon.html -%}
   {%- feed_meta -%}
+
+  <script type="text/javascript" src="/assets/js/jquery.min.js" ></script>
+  <script type="text/javascript" src="/assets/js/modernizr.js" ></script>
+
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}

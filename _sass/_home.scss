@@ -5,37 +5,12 @@ body {
   background-color: #eee;
   background-image: url(/assets/images/tri-pat.svg);
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 750px;
   position: relative;
 }
 
 // Positioning -------------------------------
-header {
-  position: absolute;
-  top: 2em;
-  left: 0;
-  right: 0;
-  @include media-query($bp-mobile) {
-    position: relative;
-    left: 2.5%;
-  }
-}
-
-#home-body {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  @include transform(translateY(-50%));
-  @include media-query($bp-mobile) {
-    position: relative;
-    @include transform(translateY(0));
-    margin: 6em 2.5% 2em;
-    top: auto;
-    bottom: 2em;
-  }
+.title {
+  margin: 3em auto 6em;
 }
 
 footer {
@@ -43,52 +18,176 @@ footer {
   bottom: 0;
   left: 0;
   right: 0;
-  @include media-query($bp-mobile) {
+  @include bp($mobile) {
     left: 2.5%;
   }
 }
 
 // Text -------------------------------------
-h1 {
-  color: $grey;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: 36px;
-  font-weight: 500;
-  letter-spacing: .05em;
-}
-
-p {
-  font-weight: 100;
-  letter-spacing: .03em;
-  margin-bottom: 0;
-  @include media-query($bp-tablet) {
-    max-width: 50ch;
-    margin-bottom: 1em;
-  }
-}
-
-#intro-text {
-  margin-bottom: 2em;
-}
-
 .copyright {
   color: $grey;
   font-size: 14px;
   font-weight: 100;
   letter-spacing: 2px;
   margin-bottom: 2em;
-  @include media-query($bp-mobile) {
+  @include bp($mobile) {
     margin-left: 5%;
   }
 }
 
-// Icons -------------------------------------
+// Featured Work -----------------------------------------
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+.ft-work li {
+  padding: 1em 0;
+  h3 { margin-top: 0.5em; }
+  &:hover {
+    .ft-work-img {
+      @include box-shadow(0, 0, 50px, rgba(0,0,0,.2));
+      @include transform(scale(1.05));
+    }
+  }
+}
+
+.ft-work-img {
+  position: relative;
+  overflow: hidden;
+  @include transition(all);
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: (1 / 2) * 100%;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+
+// Featured Video ---------------------------------------
+.ft-vid {
+  h3 { margin-top: 1em; }
+}
+
+// YouTube Player ---------------------------------------
+$color-button:       #fff;
+$color-button-hover: #f00;
+
+.videoWrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  &43 {
+    padding-top: 75%;
+  }
+  &169 {
+    padding-top: 56%;
+  }
+}
+.videoIframe {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.videoPoster {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  background-size: cover;
+  text-indent: -999em;
+  overflow: hidden;
+  opacity: 1;
+  -webkit-transition: opacity 800ms, height 0s;
+  -moz-transition: opacity 800ms, height 0s;
+  transition: opacity 800ms, height 0s;
+  -webkit-transition-delay: 0s, 0s;
+  -moz-transition-delay: 0s, 0s;
+  transition-delay: 0s, 0s;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    width: 80px;
+    height: 80px;
+    margin: -40px 0 0 -40px;
+    border: 5px solid $white;
+    border-radius: 100%;
+    -webkit-transition: border-color 300ms;
+    -moz-transition: border-color 300ms;
+    transition: border-color 300ms;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    width: 0;
+    height: 0;
+    margin: -20px 0 0 -10px;
+    border-left: 40px solid $white;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    -webkit-transition: border-color 300ms;
+    -moz-transition: border-color 300ms;
+    transition: border-color 300ms;
+  }
+  &:hover,
+  &:focus {
+    &:before {
+      border-color: $melon;
+    }
+    &:after {
+      border-left-color: $melon;
+    }
+  }
+  .videoWrapperActive & {
+    opacity: 0;
+    height: 0;
+    -webkit-transition-delay: 0s, 800ms;
+    -moz-transition-delay: 0s, 800ms;
+    transition-delay: 0s, 800ms;
+  }
+}
+
+// Featured Articles --------------------------------
+.ft-arts {
+  padding-left: 5%;
+  @include bp($mobile) {
+    margin-top: 6em;
+    padding-left: 0;
+  }
+
+  li { margin-bottom: 2em; }
+  h3 { margin-bottom: 5px; }
+  p { margin-bottom: .5em; }
+}
+
+// Social icons -------------------------------------
 .si-link {
   display: inline-block;
   margin: 0 10px 10px 0;
@@ -123,6 +222,7 @@ $social:  (email, $melon),
 // Pup --------------------------------------
 footer .group {
   position: relative;
+  margin-bottom: 0;
 }
 
 .husky {

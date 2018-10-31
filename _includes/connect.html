@@ -1,0 +1,16 @@
+<div class="group">
+  <div class="span1-1">
+    <h2>Let's Connect</h2>
+    <p class="connect-p">Here are a few other places you can find me around the web. Feel free to reach out! I’m always down for a coffee / beer / walk in the park.</p>
+  </div>
+  <div id="social-icons">
+    <div class="span1-1">
+      {% for icon in page.social-icons %}
+        <a class="si-link {{ icon.class }}" href="{{ icon.url }}" target="_blank">
+          {% include {{ icon.class | prepend: 'icons/' | append: '.svg' }} %}
+          <span class="si-title">{{ icon.title }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
