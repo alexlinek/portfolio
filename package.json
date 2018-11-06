@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Pardon the lack of content. This is a placeholder for my personal website that will eventually feature my portfolio and resume.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexlinek/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexlinek/portfolio/issues"
+  },
+  "homepage": "https://github.com/alexlinek/portfolio#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
