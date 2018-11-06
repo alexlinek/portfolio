@@ -1,16 +1,18 @@
 const gulp = require('gulp');
-function magicUpperCaseConvert() {
-  // ...
-};
+const concat = require('gulp-concat');
+const sass = require('gulp-sass');
 
-gulp.task('upper', () => {
-  gulp.src('*.txt')
-    .pipe(magicUpperCaseConvert())
-    .pipe(gulp.dest('upper_files'));
+const cssFiles = '_sass/**/*.?(s)css';
+
+gulp.task('css', () => {
+  gulp.src(cssFiles)
+    .pipe(sass())
+    .pipe(concat('all.css'))
+    .pipe(gulp.dest('assets'));
 });
 
 gulp.task('watch', () => {
-  gulp.watch('*.txt', ['upper']);
+  gulp.watch(cssFiles, ['css']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['css', 'watch']);
