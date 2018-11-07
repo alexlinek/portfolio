@@ -1,0 +1,12 @@
+
+
+.case-studies li {
+  padding: 1em 0;
+  h3 { margin-top: 0.5em; }
+  a:hover {
+    .ft-work-img {
+      @include box-shadow(0, 0, 50px, rgba(0,0,0,.2));
+      @include transform(scale(1.05));
+    }
+  }
+}

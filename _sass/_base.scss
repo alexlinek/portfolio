@@ -87,6 +87,15 @@ h4 {
   font-size: em(16px);
 }
 
+h5 {
+  color: $grey;
+  font-size: em(12px);
+  font-weight: $medium;
+  letter-spacing: .1em;
+  margin: 1em 0 .25em;
+  text-transform: uppercase;
+}
+
 p {
   font-size: em(14px);
   font-weight: $light;

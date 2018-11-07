@@ -83,6 +83,14 @@ h3 {
 h4 {
   font-size: 0.8888888889em; }
 
+h5 {
+  color: #6D6D6D;
+  font-size: 0.6666666667em;
+  font-weight: 600;
+  letter-spacing: .1em;
+  margin: 1em 0 .25em;
+  text-transform: uppercase; }
+
 p {
   font-size: 0.7777777778em;
   font-weight: 300;
@@ -512,3 +520,17 @@ footer .group {
 .husky .eyes,
 .husky .eyes {
   animation: shifty 6s ease infinite, blink 8s linear 2s infinite, slide-in 2.5s ease; }
+
+.case-studies li {
+  padding: 1em 0; }
+  .case-studies li h3 {
+    margin-top: 0.5em; }
+  .case-studies li a:hover .ft-work-img {
+    -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05); }
