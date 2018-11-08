@@ -591,23 +591,28 @@ p a {
     max-width: 65ch; }
   .quals .span1-2 figure {
     display: block;
-    margin: 1em auto;
+    margin: 1.5em 0;
     max-width: 400px; }
   .quals .span1-2 figcaption {
     color: #6D6D6D;
     font-size: 0.7777777778em;
-    padding: .25em 0; }
+    padding: .5em 0; }
 
 #xkcdbtn {
   margin: 4em auto; }
 
 #xkcdbox {
-  display: none; }
+  display: none;
+  -webkit-transition: all 0.2s linear 0s;
+  -moz-transition: all 0.2s linear 0s;
+  -ms-transition: all 0.2s linear 0s;
+  -o-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s; }
 
 #xkcdcomic {
   background: #ffffff;
   display: block;
-  margin: 1em auto;
+  margin: 1em auto 0;
   text-align: center;
   width: 100%;
   border-radius: 3px;
@@ -619,4 +624,4 @@ p a {
   #xkcdcomic img {
     display: block;
     padding: 1em;
-    margin: 1em auto; }
+    margin: 1em auto 0; }

@@ -40,13 +40,13 @@ p a {
   h5, p { max-width: 65ch; }
   figure {
     display: block;
-    margin: 1em auto;
+    margin: 1.5em 0;
     max-width: 400px;
   }
   figcaption {
     color: $grey;
     font-size: em(14px);
-    padding: .25em 0;
+    padding: .5em 0;
   }
 }
 
@@ -55,12 +55,15 @@ p a {
   margin: 4em auto;
 }
 
-#xkcdbox { display: none; }
+#xkcdbox {
+  display: none;
+  @include transition(all);
+}
 
 #xkcdcomic {
   background: $white;
   display: block;
-  margin: 1em auto;
+  margin: 1em auto 0;
   text-align: center;
   width: 100%;
   border-radius: 3px;
@@ -68,6 +71,6 @@ p a {
   img {
     display: block;
     padding: 1em;
-    margin: 1em auto;
+    margin: 1em auto 0;
   }
 }
