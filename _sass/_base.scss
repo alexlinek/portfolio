@@ -125,10 +125,12 @@ a {
   background: transparent;
   border: 1px solid $black;
   color: $black;
+  cursor: pointer;
   padding: 1em 2em;
   font-size: em(12px);
   font-weight: $medium;
   letter-spacing: .25em;
+  outline: 0;
   text-transform: uppercase;
   @include transition(all);
   &:hover {

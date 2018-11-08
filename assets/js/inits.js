@@ -53,132 +53,30 @@ $(function() {
 
 
 // AJAX example =================================================
-$("#baconbtn").click(function(){
+$(document).ready(function(){
+  $("#xkcdbox").hide();
+});
+
+$("#xkcdbtn").click(function(){
   $.ajax({
     method: "GET",
-    url: "https://baconipsum.com/api/?type=meat-and-filler",
+    url: "https://xkcd.now.sh/",
     dataType: 'json'
   })
-  .done(addP)
+  .done(showComic)
   .fail(function(){
-    alert("OH NO! FAILED!");
+    alert("ah fuck");
   })
 });
 
-function addP (data){
-  $("p#putstuffhere").text(data[0]);
-}
-
-//xkcd
-$(document).ready(function() {
-  $('#gen_xkcd').on('click', xkcdApp.fetchMonths);
-  $(window).scroll(xkcdApp.scrollFunction);
-
-});
-
-
-var xkcdApp = xkcdApp || {};
-
-xkcdApp.offsetYay = xkcdApp.offsetYay || 0;
-xkcdApp.limitYay = 5;
-
-xkcdApp.scrollFunction = function(){
-// function scrollFunction() {
-    var win = $(window);
-    // Infinite scroll math!
-    if(win.height() + win.scrollTop() >= $(document).height()) {
-      xkcdApp.fetchMonths();
-    }
-  };
-
-
-xkcdApp.fetchMonths = function(result){
-
-  $.ajax({
-    // url: 'http://xkcd-unofficial-api.herokuapp.com/xkcd?api_key=foobar&',
-    url: 'http://xkcd-unofficial-api.herokuapp.com/xkcd',
-    data: {
-      month: 07,
-      api_key: 'foobar',
-      limit: xkcdApp.limitYay,
-      offset: xkcdApp.offsetYay}
-  })
-  .done(xkcdApp.displayComics);
-
-  xkcdApp.offsetYay += xkcdApp.limitYay;
-  // or use closure
-
-};
-
-xkcdApp.displayComics = function(result){
-
-  result.forEach(function(comic){
-    var comicImg = comic.img;
-    var comicAlt = comic.alt;
-    var imgElement = $('<img>').attr('src', comicImg).attr('alt', comic.alt);
-    $('#comic_results').append(imgElement);
-  });
-};
-
-
-//npm xkcd
-var request = require('request');
-
-var HOST = "http://xkcd.com/"
-
-module.exports = {
-  get : function(number, callback) {
-    getComic(number, callback);
-  },
-
-  latest : function(callback) {
-    request.get({
-      url     : HOST + '/info.0.json',
-      json    : true
-    }, function(error, response, body){
-      if (error) {
-        console.error("Request error: " + error);
-        callback(error, null);
-      } else {
-        callback(error, body);
-      }
-    });
-  },
-
-  random : function(callback) {
-    request.get({
-      url     : HOST + '/info.0.json',
-      json    : true
-    }, function(error, response, body){
-      if (error) {
-        console.error("Request error: " + error);
-        callback(error, null);
-      } else {
-        var currentNumber = body.num;
-        getComic(randomIntFromInterval(1, currentNumber), callback);
-      }
-    });
-  }
-}
-
-function getComic(number, callback) {
-  request.get({
-    url     : HOST + number + '/info.0.json',
-    json    : true
-  }, function(error, response, body){
-    if (error) {
-      console.error("Request error: " + error);
-      callback(error, null);
-    } if (response.statusCode === 404) {
-      callback("Comic does not exist. Yet.", body);
-    } else if (response.statusCode !== 200) {
-      callback(response.statusCode, body);
-    } else {
-      callback(error, body);
-    }
-  });
-}
-
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+function showComic (data){
+  $("xkcdcomic").text(data[0]);
+  var comicImg = data.img;
+  var comicAlt = data.alt;
+  var comicUrl = data.url;
+  var imgElement = $('<img>').attr('src', comicImg).attr('alt', data.alt);
+  $('#xkcdbtn').hide();
+  $('#xkcdbox').show();
+  $('#xkcdcomic').append(imgElement);
+  $('#xkcdtext').append(comicAlt);
 }
