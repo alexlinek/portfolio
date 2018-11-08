@@ -87,8 +87,8 @@ h5 {
   color: #6D6D6D;
   font-size: 0.6666666667em;
   font-weight: 600;
-  letter-spacing: .1em;
-  margin: 1em 0 .25em;
+  letter-spacing: .15em;
+  margin: 1.5em 0 .5em;
   text-transform: uppercase; }
 
 p {
@@ -254,6 +254,21 @@ a {
   .span1-4,
   .span3-4 {
     width: 100%; } }
+/* Flex Grid -------------------------------- */
+.flex-contain {
+  clear: both;
+  margin: 0;
+  padding: 0; }
+
+.flex-grid {
+  display: flex; }
+  @media screen and (max-width: 600px) {
+    .flex-grid {
+      display: block; } }
+
+.col {
+  flex: 1; }
+
 body {
   background-color: #eee;
   background-image: url(/assets/images/tri-pat.svg);
@@ -523,8 +538,6 @@ footer .group {
 
 .case-studies li {
   padding: 1em 0; }
-  .case-studies li h3 {
-    margin-top: 0.5em; }
   .case-studies li a:hover .ft-work-img {
     -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
@@ -534,3 +547,51 @@ footer .group {
     -ms-transform: scale(1.05);
     -o-transform: scale(1.05);
     transform: scale(1.05); }
+  .case-studies li h3 {
+    margin: 1em 0 0.25em; }
+  .case-studies li p {
+    margin-bottom: .5em; }
+
+p a {
+  padding-bottom: 3px;
+  position: relative;
+  -webkit-transition: color 0.2s linear 0s;
+  -moz-transition: color 0.2s linear 0s;
+  -ms-transition: color 0.2s linear 0s;
+  -o-transition: color 0.2s linear 0s;
+  transition: color 0.2s linear 0s; }
+  p a:after {
+    background: #3E3E3F;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    -webkit-transition: background 0.2s linear 0s;
+    -moz-transition: background 0.2s linear 0s;
+    -ms-transition: background 0.2s linear 0s;
+    -o-transition: background 0.2s linear 0s;
+    transition: background 0.2s linear 0s; }
+  p a:hover {
+    color: #FF6861; }
+    p a:hover:after {
+      background: #FF6861; }
+
+.quals .span1-2 {
+  padding-bottom: 1em; }
+  .quals .span1-2 h5 {
+    font-size: 0.7777777778em; }
+  .quals .span1-2 p {
+    font-size: 0.8888888889em; }
+  .quals .span1-2 h5, .quals .span1-2 p {
+    max-width: 65ch; }
+  .quals .span1-2 figure {
+    display: block;
+    margin: 1em auto;
+    max-width: 400px; }
+  .quals .span1-2 figcaption {
+    color: #6D6D6D;
+    font-size: 0.7777777778em;
+    padding: .25em 0; }

@@ -2,11 +2,50 @@
 
 .case-studies li {
   padding: 1em 0;
-  h3 { margin-top: 0.5em; }
   a:hover {
     .ft-work-img {
       @include box-shadow(0, 0, 50px, rgba(0,0,0,.2));
       @include transform(scale(1.05));
     }
+  }
+  h3 { margin: 1em 0 0.25em; }
+  p { margin-bottom: .5em; }
+}
+
+p a {
+  padding-bottom: 3px;
+  position: relative;
+  @include transition(color);
+  &:after {
+    background: $black;
+    bottom: 0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    @include transition(background);
+  }
+  &:hover {
+    color: $melon;
+    &:after { background: $melon; }
+  }
+}
+
+.quals .span1-2 {
+  padding-bottom: 1em;
+  h5 { font-size: em(14px); }
+  p { font-size: em(16px); }
+  h5, p { max-width: 65ch; }
+  figure {
+    display: block;
+    margin: 1em auto;
+    max-width: 400px;
+  }
+  figcaption {
+    color: $grey;
+    font-size: em(14px);
+    padding: .25em 0;
   }
 }

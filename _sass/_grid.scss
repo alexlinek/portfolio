@@ -47,3 +47,18 @@
     width: 100%;
   }
 }
+
+/* Flex Grid -------------------------------- */
+.flex-contain {
+	clear: both;
+	margin: 0;
+	padding: 0;
+}
+
+.flex-grid {
+  display: flex;
+	@include bp($mobile) { display: block; }
+}
+.col {
+  flex: 1;
+}
