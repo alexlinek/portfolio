@@ -10,6 +10,10 @@
   }
   h3 { margin: 1em 0 0.25em; }
   p { margin-bottom: .5em; }
+  .ohno {
+    font-size: em(12px);
+    color: $grey;
+  }
 }
 
 p a {
