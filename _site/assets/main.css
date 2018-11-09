@@ -593,7 +593,8 @@ footer .group {
   animation: shifty 6s ease infinite, blink 8s linear 2s infinite, slide-in 2.5s ease; }
 
 .case-studies li {
-  padding: 1em 0; }
+  padding: 1em 0;
+  min-height: 600px; }
   .case-studies li a:hover .ft-work-img {
     -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
@@ -607,9 +608,6 @@ footer .group {
     margin: 1em 0 0.25em; }
   .case-studies li p {
     margin-bottom: .5em; }
-  .case-studies li .ohno {
-    font-size: 0.6666666667em;
-    color: #6D6D6D; }
 
 p a {
   padding-bottom: 3px;
