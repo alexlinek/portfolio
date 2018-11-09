@@ -3,6 +3,9 @@
 .case-studies li {
   padding: 1em 0;
   min-height: 600px;
+  @include bp($mobile) {
+    min-height: auto;
+  }
   a:hover {
     .ft-work-img {
       @include box-shadow(0, 0, 50px, rgba(0,0,0,.2));

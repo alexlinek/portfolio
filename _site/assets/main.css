@@ -595,6 +595,9 @@ footer .group {
 .case-studies li {
   padding: 1em 0;
   min-height: 600px; }
+  @media screen and (max-width: 600px) {
+    .case-studies li {
+      min-height: auto; } }
   .case-studies li a:hover .ft-work-img {
     -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
