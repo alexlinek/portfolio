@@ -1,10 +1,19 @@
 
+.case-studies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
 .case-studies li {
-  padding: 1em 0;
-  min-height: 600px;
+  width: 30%;
+  padding-bottom: 3em;
+  @include bp($tablet) {
+    width: 45%;
+  }
   @include bp($mobile) {
-    min-height: auto;
+    width: 100%;
   }
   a:hover {
     .ft-work-img {

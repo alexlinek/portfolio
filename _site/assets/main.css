@@ -592,12 +592,21 @@ footer .group {
 .husky .eyes {
   animation: shifty 6s ease infinite, blink 8s linear 2s infinite, slide-in 2.5s ease; }
 
+.case-studies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+
 .case-studies li {
-  padding: 1em 0;
-  min-height: 600px; }
+  width: 30%;
+  padding-bottom: 3em; }
+  @media screen and (max-width: 900px) {
+    .case-studies li {
+      width: 45%; } }
   @media screen and (max-width: 600px) {
     .case-studies li {
-      min-height: auto; } }
+      width: 100%; } }
   .case-studies li a:hover .ft-work-img {
     -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
