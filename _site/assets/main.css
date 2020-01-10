@@ -622,6 +622,7 @@ footer .group {
     margin-bottom: .5em; }
 
 p a {
+  display: inline-block;
   padding-bottom: 3px;
   position: relative;
   -webkit-transition: color 0.2s linear 0s;

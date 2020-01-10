@@ -26,6 +26,7 @@
 }
 
 p a {
+  display: inline-block;
   padding-bottom: 3px;
   position: relative;
   @include transition(color);
