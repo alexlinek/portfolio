@@ -111,6 +111,15 @@ p {
 .connect-p {
   max-width: 65ch; }
 
+.award-proj a {
+  -webkit-transition: all 0.2s linear 0s;
+  -moz-transition: all 0.2s linear 0s;
+  -ms-transition: all 0.2s linear 0s;
+  -o-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s; }
+  .award-proj a:hover {
+    color: #FF6861; }
+
 a {
   color: #3E3E3F;
   text-decoration: none;

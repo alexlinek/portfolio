@@ -113,6 +113,10 @@ p {
 .feat-p { margin-bottom: .5em; }
 .connect-p { max-width: 65ch; }
 
+.award-proj a {
+  @include transition(all);
+  &:hover { color: $melon; }
+}
 
 // Links & Buttons
 a {

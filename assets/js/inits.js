@@ -80,3 +80,8 @@ function showComic (data){
   $('#xkcdcomic').append(imgElement);
   $('#xkcdtext').append(comicAlt);
 }
+
+// Time Ago =================================================
+$(document).ready(function() {
+  $("time.timeago").timeago();
+});
