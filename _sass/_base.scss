@@ -57,138 +57,138 @@ li {
 }
 
 // Headings
-h1, h2, h3, h4, h5, h6 {
-  font-weight: $regular;
-  letter-spacing: .05em;
-}
-
-h1 {
-  color: $grey;
-  font-size: em(16px);
-  font-weight: $medium;
-  letter-spacing: .2em;
-  margin-bottom: 1em;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: em(36px);
-  font-weight: $regular;
-  line-height: 1.25em;
-  margin-bottom: .5em;
-}
-
-h3 {
-  font-size: em(18px);
-  letter-spacing: .1em;
-}
-
-h4 {
-  font-size: em(16px);
-}
-
-h5 {
-  color: $grey;
-  font-size: em(12px);
-  font-weight: $medium;
-  letter-spacing: .15em;
-  margin: 1.5em 0 .5em;
-  text-transform: uppercase;
-}
-
-p {
-  font-size: em(14px);
-  font-weight: $light;
-  letter-spacing: .05em;
-}
-
-.intro-p,
-.feat-p,
-.connect-p {
-  font-size: 1em;
-  margin-bottom: 2em;
-}
-
-.intro-p { max-width: 70ch; }
-.feat-p { margin-bottom: .5em; }
-.connect-p { max-width: 65ch; }
-
-.award-proj a {
-  @include transition(all);
-  &:hover { color: $melon; }
-}
-
-// Links & Buttons
-a {
-  color: $black;
-  text-decoration: none;
-  outline: none!important;
-}
-
-.btn-primary {
-  background: transparent;
-  border: 1px solid $black;
-  color: $black;
-  cursor: pointer;
-  padding: 1em 2em;
-  font-size: em(12px);
-  font-weight: $medium;
-  letter-spacing: .25em;
-  outline: 0;
-  text-transform: uppercase;
-  @include transition(all);
-  &:hover {
-    color: $white;
-    background: $black;
-  }
-}
-
-.btn-secondary,
-.btn-play {
-  display: inline-block;
-  font-size: em(12px);
-  font-weight: $medium;
-  letter-spacing: .2em;
-  padding-bottom: 8px;
-  position: relative;
-  text-transform: uppercase;
-  @include transition(all);
-  &:after {
-    background: $grey;
-    bottom: 0;
-    content: '';
-    display: block;
-    height: 2px;
-    left: 0;
-    position: absolute;
-    right: 0;
-    @include transition(all);
-  }
-  &:hover {
-    color: $melon;
-    &:after { background: $melon; }
-  }
-}
-
-.btn-play {
-  margin-right: 10%;
-  padding-left: 30px;
-  position: relative;
-  &:before {
-    content: '';
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 17px solid $black;
-    left: 0;
-    position: absolute;
-    top: 0;
-    @include transition(all);
-  }
-  &:after { left: 30px; }
-  &:hover:before { border-left-color: $melon; }
-}
+// h1, h2, h3, h4, h5, h6 {
+//   font-weight: $regular;
+//   letter-spacing: .05em;
+// }
+//
+// h1 {
+//   color: $grey;
+//   font-size: em(16px);
+//   font-weight: $medium;
+//   letter-spacing: .2em;
+//   margin-bottom: 1em;
+//   text-transform: uppercase;
+// }
+//
+// h2 {
+//   font-size: em(36px);
+//   font-weight: $regular;
+//   line-height: 1.25em;
+//   margin-bottom: .5em;
+// }
+//
+// h3 {
+//   font-size: em(18px);
+//   letter-spacing: .1em;
+// }
+//
+// h4 {
+//   font-size: em(16px);
+// }
+//
+// h5 {
+//   color: $grey;
+//   font-size: em(12px);
+//   font-weight: $medium;
+//   letter-spacing: .15em;
+//   margin: 1.5em 0 .5em;
+//   text-transform: uppercase;
+// }
+//
+// p {
+//   font-size: em(14px);
+//   font-weight: $light;
+//   letter-spacing: .05em;
+// }
+//
+// .intro-p,
+// .feat-p,
+// .connect-p {
+//   font-size: 1em;
+//   margin-bottom: 2em;
+// }
+//
+// .intro-p { max-width: 70ch; }
+// .feat-p { margin-bottom: .5em; }
+// .connect-p { max-width: 65ch; }
+//
+// .award-proj a {
+//   @include transition(all);
+//   &:hover { color: $melon; }
+// }
+//
+// // Links & Buttons
+// a {
+//   color: $black;
+//   text-decoration: none;
+//   outline: none!important;
+// }
+//
+// .btn-primary {
+//   background: transparent;
+//   border: 1px solid $black;
+//   color: $black;
+//   cursor: pointer;
+//   padding: 1em 2em;
+//   font-size: em(12px);
+//   font-weight: $medium;
+//   letter-spacing: .25em;
+//   outline: 0;
+//   text-transform: uppercase;
+//   @include transition(all);
+//   &:hover {
+//     color: $white;
+//     background: $black;
+//   }
+// }
+//
+// .btn-secondary,
+// .btn-play {
+//   display: inline-block;
+//   font-size: em(12px);
+//   font-weight: $medium;
+//   letter-spacing: .2em;
+//   padding-bottom: 8px;
+//   position: relative;
+//   text-transform: uppercase;
+//   @include transition(all);
+//   &:after {
+//     background: $grey;
+//     bottom: 0;
+//     content: '';
+//     display: block;
+//     height: 2px;
+//     left: 0;
+//     position: absolute;
+//     right: 0;
+//     @include transition(all);
+//   }
+//   &:hover {
+//     color: $melon;
+//     &:after { background: $melon; }
+//   }
+// }
+//
+// .btn-play {
+//   margin-right: 10%;
+//   padding-left: 30px;
+//   position: relative;
+//   &:before {
+//     content: '';
+//     width: 0;
+//     height: 0;
+//     border-top: 10px solid transparent;
+//     border-bottom: 10px solid transparent;
+//     border-left: 17px solid $black;
+//     left: 0;
+//     position: absolute;
+//     top: 0;
+//     @include transition(all);
+//   }
+//   &:after { left: 30px; }
+//   &:hover:before { border-left-color: $melon; }
+// }
 
 // Clearfix
 %clearfix {

@@ -1,0 +1,64 @@
+
+// Spoopy
+
+@keyframes haunt {
+  0%    { opacity: 0; }
+  50%   { opacity: 1; }
+  100%  { opacity: 0; }
+}
+
+@keyframes hint {
+  0%   { color: #000000; }
+  98%   { color: #000000; }
+  100% { color: $white; }
+}
+
+.hauntedhouse {
+  background: #000;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .ghosty {
+    width: 100px;
+    image-rendering: pixelated;
+    animation: haunt 5s infinite;
+  }
+  .basement {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    color: $white;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: .75em;
+    opacity: .1;
+  }
+  .key {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: $white;
+    opacity: .3;
+    animation: hint 10s infinite;
+    cursor: pointer;
+    &:hover {
+      animation-play-state: paused;
+      color: $white !important;
+    }
+  }
+  .treasurechest {
+    position: absolute;
+    left: 10vw;
+    top: 60vh;
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    &.unlocked {
+      opacity: 1;
+    }
+  }
+}
