@@ -86,7 +86,7 @@
 //   $("time.timeago").timeago();
 // });
 
-// Time Ago =================================================
+// Konami Code =================================================
 $(document).ready(function() {
   $(function(){
       var kKeys = [];
