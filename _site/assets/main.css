@@ -130,6 +130,7 @@ a {
   border: 1px solid #3E3E3F;
   color: #3E3E3F;
   cursor: pointer;
+  display: inline-block;
   padding: 1em 2em;
   font-size: 0.6666666667em;
   font-weight: 600;
@@ -717,6 +718,9 @@ p a {
 
 .sidenote {
   text-align: right; }
+
+.bottom-note {
+  margin-top: 2em; }
 
 .quals .span1-2 {
   padding-bottom: 1em; }
